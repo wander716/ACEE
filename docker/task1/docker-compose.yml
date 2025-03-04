@@ -1,0 +1,230 @@
+version: '3.8'
+
+services:
+  # 创建 20 个 Ubuntu 容器
+  container1:
+    image: ubuntu:latest
+    container_name: ubuntu-container1
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2221:22"  # 为容器 1 映射 SSH 端口
+
+  container2:
+    image: ubuntu:latest
+    container_name: ubuntu-container2
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2222:22"  # 为容器 2 映射 SSH 端口
+
+  container3:
+    image: ubuntu:latest
+    container_name: ubuntu-container3
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2223:22"  # 为容器 3 映射 SSH 端口
+
+
+
+  container4:
+    image: ubuntu:latest
+    container_name: ubuntu-container4
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2224:22"  # 为容器 4 映射 SSH 端口
+
+  container5:
+    image: ubuntu:latest
+    container_name: ubuntu-container5
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2225:22"  # 为容器 3 映射 SSH 端口
+  container6:
+    image: ubuntu:latest
+    container_name: ubuntu-container6
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2226:22"  # 为容器 6 映射 SSH 端口
+
+  container7:
+    image: ubuntu:latest
+    container_name: ubuntu-container7
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2227:22"  # 为容器 7 映射 SSH 端口
+  
+  container8:
+    image: ubuntu:latest
+    container_name: ubuntu-container8
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2228:22"  # 为容器 8 映射 SSH 端口
+
+  container9:
+    image: ubuntu:latest
+    container_name: ubuntu-container9
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2229:22"  # 为容器 9 映射 SSH 端口
+  
+  container10:
+    image: ubuntu:latest
+    container_name: ubuntu-container10
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2230:22"  # 为容器 10 映射 SSH 端口
+
+  container11:
+    image: ubuntu:latest
+    container_name: ubuntu-container11
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2231:22"  # 为容器 11 映射 SSH 端口
+  
+  container12:
+    image: ubuntu:latest
+    container_name: ubuntu-container12
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2232:22"  # 为容器 12 映射 SSH 端口
+
+  container13:
+    image: ubuntu:latest
+    container_name: ubuntu-container13
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2233:22"  # 为容器 13 映射 SSH 端口
+  
+  container14:
+    image: ubuntu:latest
+    container_name: ubuntu-container14
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2234:22"  # 为容器 14 映射 SSH 端口
+
+  container15:
+    image: ubuntu:latest
+    container_name: ubuntu-container15
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2235:22"  # 为容器 15 映射 SSH 端口
+  
+  container16:
+    image: ubuntu:latest
+    container_name: ubuntu-container16
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2236:22"  # 为容器 16 映射 SSH 端口
+  
+  container17:
+    image: ubuntu:latest
+    container_name: ubuntu-container17
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2237:22"  # 为容器 17 映射 SSH 端口
+  
+  container18:
+    image: ubuntu:latest
+    container_name: ubuntu-container18
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2238:22"  # 为容器 18 映射 SSH 端口
+  
+  container19:
+    image: ubuntu:latest
+    container_name: ubuntu-container19
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2239:22"  # 为容器 19 映射 SSH 端口
+  
+  container20:
+    image: ubuntu:latest
+    container_name: ubuntu-container20
+    build:
+      context: .
+    tty: true
+    networks:
+      - my_network
+    ports:
+      - "2240:22"  # 为容器 20 映射 SSH 端口
+
+  
+networks:
+  my_network:
+    driver: bridge  # 创建自定义网络，容器将位于该网络中，可以互相 ping 和 ssh
+

@@ -1,0 +1,14 @@
+# 使用 Ubuntu 作为基础镜像
+FROM ubuntu:latest
+
+# 设置工作目录为 /tmp
+WORKDIR /tmp
+
+# 复制本地的 quicksort.sh 到容器内的 /tmp 目录
+COPY ./quicksort.sh /tmp/quicksort.sh
+
+# 赋予脚本执行权限
+RUN chmod +x /tmp/quicksort.sh
+
+# 设置默认执行的命令
+CMD ["/bin/bash"]

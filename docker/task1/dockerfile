@@ -1,0 +1,27 @@
+# 使用 Ubuntu 22.04 基础镜像
+FROM ubuntu:latest
+
+# 安装 SSH 服务和其他依赖
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    sudo \
+    iputils-ping \
+    && mkdir /var/run/sshd
+
+# 创建 SSH 用户并设置密码
+RUN useradd -m -s /bin/bash dockeruser \
+    && echo 'dockeruser:123456' | chpasswd \
+    && adduser dockeruser sudo
+
+# 配置 SSH，允许 root 用户登录
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+
+# 设置工作目录
+WORKDIR /home/dockeruser
+
+# 暴露 SSH 端口
+EXPOSE 22
+
+# 启动 SSH 服务
+CMD ["/usr/sbin/sshd", "-D"]

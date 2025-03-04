@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+
+WORKDIR /root
+
+# 创建 helloworld.txt 并写入 "hel"
+RUN echo "helloworld" > helloworld.txt
+
+
+
+CMD ["/bin/bash"]
