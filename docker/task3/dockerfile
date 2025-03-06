@@ -1,0 +1,18 @@
+# 使用 Ubuntu 作为基础镜像
+FROM ubuntu:latest
+
+# 安装 BIRD
+RUN apt-get update && \
+    apt-get install -y bird && \
+    apt-get install -y vim && \
+    apt-get install -y iputils-ping && \
+    rm -rf /var/lib/apt/lists/*
+
+# 确保 /run/bird 目录存在
+RUN mkdir -p /run/bird && chmod 755 /run/bird
+
+
+# 运行 BIRD
+CMD [ "bird", "-d", "-c", "/etc/bird/bird.conf" ]
+
+

@@ -141,3 +141,35 @@ container1:
   networks:
       - my_network
 ```
+
+## 2. 怎样通过Docker Compose和Dockerfile使得每个容器带有ssh服务
+- 使用Dockerfile在镜像安装的时候通过RUN指令来安装OpenSSH服务器并启动
+```bash
+# 使用 Ubuntu 作为基础镜像
+FROM ubuntu:latest
+
+# 安装 SSH 服务和其他依赖
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    sudo \
+    iputils-ping \
+    && mkdir /var/run/sshd
+
+# 创建 SSH 用户并设置密码
+RUN useradd -m -s /bin/bash dockeruser \
+    && echo 'dockeruser:123456' | chpasswd \
+    && adduser dockeruser sudo
+
+
+# 开放 SSH 端口
+EXPOSE 22
+# 启动 SSH 服务
+CMD ["/usr/sbin/sshd", "-D"]
+
+```
+- 在docker-compose.yml文件中构建并指定networks，并分配ports
+- 运行容器  
+
+```bash
+docker-compose up -d
+```
