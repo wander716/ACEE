@@ -69,3 +69,36 @@ VOLUME ["/data"]
 - FROM指令代替docker pull
 - CMD指令代替docker run
 - 同时包含了docker build功能
+
+## 5. 运行项目
+### docker build构建镜像
+与用docker pull命令行直接拉取镜像，基于dockerfile的容器构建是使用docker build命令
+```bash
+docker build .
+```
+上述代码中，**.**表示当前目录，说明docker会自动根据当前目录下的dockerfile来构建镜像
+### docker run运行容器
+这点和不使用dockerfile而直接用docker pull拉取镜像一样，都需要docker run来构建镜像
+```bash
+docker un --name my_container my_image_name
+```
+
+## 6. docker基本指令
+```bash
+/// 使用dockerfile构建镜像
+docker build .
+/// 列出所有本地镜像 
+docker images
+/// 删除指定镜像
+docker rmi my_image_name
+/// 列出所有正在运行中的容器
+docker ps
+/// 列出所有容器
+docker ps -a
+/// 启动容器
+docker start my_container
+/// 停止容器
+docker stop my_container
+/// 删除容器
+docker rm my_container
+```
