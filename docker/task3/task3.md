@@ -58,7 +58,7 @@ Transit AS的路由器连接多个Stub AS，负责中转BGP流量。
 volumes为transit使用bird进行BGP路由配置
 
 ## BIRD（BIRD Internet Routing Daemon）
-通过翻阅BIRD官网**https://bird.network.cz/**，我学习到BIRD用于互联网路由，也就是说它在互联网类型中的网络中充当动态路由器，从而实现在互联网中的各个IP之间互相转发数据包，从而实现网络结构。因为BIRD支持BGP（边界网关协议），因此对于在这里我们使用BIRD来搭建AS之间的连接。
+通过翻阅BIRD官网 **https://bird.network.cz/** ， 我学习到BIRD用于互联网路由，也就是说它在互联网类型中的网络中充当动态路由器，从而实现在互联网中的各个IP之间互相转发数据包，从而实现网络结构。因为BIRD支持BGP（边界网关协议），因此对于在这里我们使用BIRD来搭建AS之间的连接
 #### 安装BIRD
 我们在ubuntu容器中安装并使用BIRD，因此我们在dockerfile中使用RUN指令来安装BIRD
 ```bash
