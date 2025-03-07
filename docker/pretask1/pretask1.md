@@ -1,5 +1,10 @@
 ## 1. 使用dockerfile拉取镜像并建立一个新容器
+
+### new part
+
 ### 使用dockerfile
+
+
 ```bash
 ///dockerfile
 FROM ubuntu:latest
@@ -80,7 +85,7 @@ docker build .
 ### docker run运行容器
 这点和不使用dockerfile而直接用docker pull拉取镜像一样，都需要docker run来构建镜像
 ```bash
-docker un --name my_container my_image_name
+docker run --name my_container my_image_name
 ```
 
 ## 6. docker基本指令
