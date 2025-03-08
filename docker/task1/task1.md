@@ -145,7 +145,7 @@ container1:
 # 使用 Ubuntu 作为基础镜像
 FROM ubuntu:latest
 
-# 安装 SSH 服务和其他依赖
+# 安装 SSH 和其他必要环境
 RUN apt-get update && apt-get install -y \
     openssh-server \
     sudo \
@@ -158,7 +158,7 @@ RUN useradd -m -s /bin/bash dockeruser \
     && adduser dockeruser sudo
 
 
-# 开放 SSH 端口
+# 打开 SSH 端口
 EXPOSE 22
 # 启动 SSH 服务
 CMD ["/usr/sbin/sshd", "-D"]
