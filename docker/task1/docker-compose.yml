@@ -11,7 +11,7 @@ services:
     networks:
       - my_network
     ports:
-      - "2221:22"  # 为容器 1 映射 SSH 端口
+      - "2221:22"  # 为容器 1 映射 SSH 端口，从而将容器内部的端口绑定到宿主机的2221:22端口，从而实现外部访问。
 
   container2:
     image: ubuntu:latest
@@ -226,5 +226,5 @@ services:
   
 networks:
   my_network:
-    driver: bridge  # 创建自定义网络，容器将位于该网络中，可以互相 ping 和 ssh
+    driver: bridge  # 创建自定义网络，使容器位于该网络中，可以互相 ping 和 ssh
 
