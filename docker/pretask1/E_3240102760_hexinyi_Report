@@ -1,0 +1,7 @@
+#PreTask1
+##Some introduction & background information (based on my own understanding)
+###计算机系统大致有三类，分别是Windows、macOS、Linux。Windows 是用户友好型系统，linux适用于程序员。
+##何为镜像
+###英文为image。我的理解是相当于复制粘贴的功能。
+##何为容器
+###英文为container。我的理解是这个容器装载所复制粘贴的镜像，进而能进行想要的操作。比如：PreTask1.1要求我们在新建的container中新建一个文件。
