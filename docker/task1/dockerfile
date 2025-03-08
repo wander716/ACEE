@@ -1,4 +1,4 @@
-# 使用 Ubuntu 22.04 基础镜像
+# 使用 Ubuntu 22.04 镜像
 FROM ubuntu:latest
 
 # 安装 SSH 和其他必要环境
@@ -13,9 +13,6 @@ RUN useradd -m -s /bin/bash dockeruser \
     && echo 'dockeruser:123456' | chpasswd \
     && adduser dockeruser sudo
 
-# 配置 SSH，允许 root 用户登录
-RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-    && echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 
 # 设置工作目录
 WORKDIR /home/dockeruser
