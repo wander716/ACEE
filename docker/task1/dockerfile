@@ -1,7 +1,7 @@
 # 使用 Ubuntu 22.04 基础镜像
 FROM ubuntu:latest
 
-# 安装 SSH 服务和其他依赖
+# 安装 SSH 和其他必要环境
 RUN apt-get update && apt-get install -y \
     openssh-server \
     sudo \
@@ -20,7 +20,7 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 # 设置工作目录
 WORKDIR /home/dockeruser
 
-# 暴露 SSH 端口
+# 打开 SSH 端口
 EXPOSE 22
 
 # 启动 SSH 服务
